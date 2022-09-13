@@ -9,7 +9,7 @@ let k = 100;
 function setup() {
   createCanvas(400, 400);
    background(220);
-  
+  p1 = loadSound('p1.mp3');
 }
 
 function sound(){
@@ -18,36 +18,36 @@ function sound(){
     if(e==k){
       background(100);
       console.log(1);
-      
+      p1.play();
     }
-    k += d;
+    k += c;
     if(e==k){
       
     }
-    k += d;
+    k += c;
     if(e==k){
       background(200);
       console.log(2);
     }
-    k += d;
+    k += c;
     if(e==k){
       
     }
-    k += d;
+    k += c;
     if(e==k){
       background(0);
       console.log(3);
     }
-    k += d;
+    k += c;
     if(e==k){
       
     }
-    k += d;
+    k += c;
     if(e==k){
       background(50);
       console.log(4);
     }
-    k += d;
+    k += c;
     if(e==k){
       
     }
