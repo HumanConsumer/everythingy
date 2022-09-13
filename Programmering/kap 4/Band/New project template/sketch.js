@@ -10,6 +10,7 @@ function setup() {
   createCanvas(400, 400);
    background(220);
   p1 = loadSound('p1.mp3');
+
 }
 
 function sound(){
@@ -19,6 +20,9 @@ function sound(){
       background(100);
       console.log(1);
       p1.play();
+      
+    } else{
+      //p1.stop();
     }
     k += c;
     if(e==k){
@@ -58,7 +62,8 @@ function sound(){
 
 
 function draw() {
- 
+ preload(p1);
+
   circle(50,350,d);
   circle(80,320,d);
   circle(123,320,d);
