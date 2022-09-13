@@ -13,34 +13,42 @@ function setup() {
 }
 
 function sound(){
-  if(mouseX>e && mouseX>e+c && mouseY>f && mouseY<b+f){
-    if(e==100){
+  if(mouseX>e && mouseX<e+c && mouseY>f && mouseY<b+f){
+    k = 100;
+    if(e==k){
       background(100);
       console.log(1);
-    }
-    
-    if(e==100+d){
       
     }
-    if(e==100+(d*2)){
+    k += d;
+    if(e==k){
+      
+    }
+    k += d;
+    if(e==k){
       background(200);
       console.log(2);
     }
-    if(e==100+(d*3)){
+    k += d;
+    if(e==k){
       
     }
-    if(e==100+(d*4)){
+    k += d;
+    if(e==k){
       background(0);
       console.log(3);
     }
-    if(e==100+(d*5)){
+    k += d;
+    if(e==k){
       
     }
-    if(e==100+(d*6)){
+    k += d;
+    if(e==k){
       background(50);
       console.log(4);
     }
-    if(e==100+(d*7)){
+    k += d;
+    if(e==k){
       
     }
     
@@ -58,7 +66,7 @@ function draw() {
 
   e = 100;
   rect(e,f,c,b);
-  //sound();
+  sound();
   e += c;
   rect(e,f,c,b);
   sound();
