@@ -17,6 +17,7 @@ let yspeed;
 let p; //radius af katten
 let j; //til random teleport
 let i; //til random teleport
+let gamemode = true; //hvis den bliver sat til false følger katten efter spilleren istedet for at tilfældigt hoppe rundt
 
 function preload() {
   //til at loade texture til mus men ikke i brug
@@ -58,12 +59,27 @@ function bigL() {
 function follow() {
   // funktion der bevæger kat
   if (!loss == true) {
-    xspeed = ((x - m) / 100) * follower;
-    yspeed = ((y - n) / 100) * follower;
-    p = fd / 2;
+    //hvis gamemode er true bevæger katten sig tilfældigt
+    if (gamemode == true) {
+    }
+
+    //
+    //
+    // hvis gamemode sættes til false så følger katten efter spilleren istedet for at bevæge sig random
+    if (gamemode == false) {
+      xspeed = ((x - m) / 100) * follower;
+      yspeed = ((y - n) / 100) * follower;
+      p = fd / 2;
+    }
+    // hvis katten rør musen taber spilleren
     if (caught < p) {
       loss = true;
-    } /*
+    }
+
+    //
+    //random teleport mode
+    //
+    /*
     if (fd > 69 || fd > 120) {    
       if (j == true && i == true) { random teleport for højere sværhedsgrad
         m = random(0, 400);
