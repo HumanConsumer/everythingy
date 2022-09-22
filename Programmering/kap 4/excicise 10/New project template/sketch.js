@@ -57,10 +57,26 @@ function bigL() {
 }
 
 function follow() {
+  gamemode = true;
   // funktion der bevæger kat
   if (!loss == true) {
+    p = fd / 2;
     //hvis gamemode er true bevæger katten sig tilfældigt
+
     if (gamemode == true) {
+      if (m <= p) {
+        xspeed *= 1 * random(-1, -1.1); //= 1; //random(0.1,1);
+        yspeed *= 1; //random(-0.9, -1.1); //*= random(-5, 5);
+      } else if (m >= cx - p) {
+        xspeed *= random(-1, -1.1); //= random(-0.9, -1.1);//-1; // random(-1,-0.1);
+        yspeed *= 1; // random(-0.9, -1.1);
+      } else if (n <= p) {
+        xspeed *= 1; //random(-0.9, -1.1); //= random(-1, 1);
+        yspeed *= random(-1, -1.1); //= 1; //random(0.1,1);
+      } else if (n >= cy - p) {
+        yspeed *= random(-1, -1.1); //= -1), // random(-1,-0.1);
+        xspeed *= 1; //random(-0.9, -1.1); //= random(-1, 1));
+      }
     }
 
     //
@@ -69,7 +85,6 @@ function follow() {
     if (gamemode == false) {
       xspeed = ((x - m) / 100) * follower;
       yspeed = ((y - n) / 100) * follower;
-      p = fd / 2;
     }
     // hvis katten rør musen taber spilleren
     if (caught < p) {
@@ -133,6 +148,8 @@ function setup() {
   n = 300;
   j = true; //random teleport
   i = true;
+  xspeed = -5;
+  yspeed = -5;
 }
 
 function draw() {
@@ -150,8 +167,8 @@ function draw() {
   n += yspeed;
   fd += 0.1; //spillet bliver sværere ved at katten bliver større over tid
   keyPressed(); //checker for bevægelse af musen
-  console.log(fd); //checker diameteren af katten til teleport
-  console.log(fd);
+  console.log(m); //checker diameteren af katten til teleport
+  console.log(n);
   preload(); //loader musens texture (ikke i brug)
   bigL(); //hvis du har tabt stopper den alt og lukker vinduet
 }
